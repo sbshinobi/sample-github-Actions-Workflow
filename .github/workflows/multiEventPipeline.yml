@@ -20,4 +20,3 @@ jobs:
         steps: #steps to be executed in the job
             - name: "Running on pull request"
               run: echo "Running on pull request"
-
