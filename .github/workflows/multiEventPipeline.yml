@@ -6,6 +6,11 @@ on:
   pull_request: #Event: Whenever a pull request is made to the repository
       branches:
           - main
+          - test
+      types:
+          - closed
+  
+
 
 jobs:
     on-push: #job 1
@@ -20,4 +25,11 @@ jobs:
         steps: #steps to be executed in the job
             - name: "Running on pull request"
               run: echo "Running on pull request"
+    on-pull-request-closed:
+        if: github.event_name == 'pull_request closed'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Running on pull request closed"
+              run: echo "Running on pull request closed"
+
 
